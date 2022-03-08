@@ -29,5 +29,10 @@
     "nodemon": "^2.0.15",
     "webpack": "^5.70.0",
     "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "sequelize": "^6.17.0"
   }
 }
