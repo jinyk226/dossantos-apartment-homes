@@ -1,8 +1,8 @@
 const { Sequelize } = require('sequelize');
 const db = require('./database')
 
-const Admin = db.define('admin', {
+const Apartment = db.define('apartment', {
 
 })
 
-module.exports = Admin
+module.exports = Apartment
