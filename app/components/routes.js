@@ -10,7 +10,8 @@ const app = () => {
     <div>
         <Router>
             <Routes>
-                <Route path='*' element={<NavBar />} /> 
+                <Route path='/home' element={<NavBar pos='absolute' bgColor='transparent' />} /> 
+                <Route path='*' element={<NavBar pos='static' bgColor='#293241' />} />
             </Routes>
             <Routes>
                 <Route path='/home' element={<Home />} />
