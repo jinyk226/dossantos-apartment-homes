@@ -6,5 +6,4 @@ db.sync({force: true})
     .then(() => {
         console.log('db synced')
         app.listen(PORT, () => console.log(`Serving on port ${PORT}`))
-
     })
