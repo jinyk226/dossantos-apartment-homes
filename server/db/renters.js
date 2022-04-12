@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 const db = require('./database')
 
-const Renter = db.define('Renter', {
+const Renter = db.define('renter', {
 
 })
 
