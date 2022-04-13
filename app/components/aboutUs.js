@@ -1,9 +1,14 @@
 import React from 'react';
+import NavBar from './navbar'
 
 function aboutUs() {
     return (
         <div>
-            This is the aboutUs component
+            <NavBar pos='static' bgColor='#293241' />
+
+            <div>
+                This is the aboutUs component
+            </div>
         </div>
     );
 }
