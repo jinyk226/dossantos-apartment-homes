@@ -9,6 +9,10 @@ app.use(express.json())
 // Allow files in public folder to be accessible by our express app
 app.use(express.static(path.join(__dirname, '../public')))
 
+app.use('/api', require('./api/'))
+
+app.use('/me', require('./me'))
+
 // 400 Error Handler: Send index.html for any other requests
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'))
