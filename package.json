@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start-server": "nodemon main.js -e html,js,css --ignore public",
+    "start-auth-server": "nodemon authServer.js -e js",
     "build": "webpack",
     "build-watch": "webpack -w",
     "start": "npm run build-watch & npm run start-server"
