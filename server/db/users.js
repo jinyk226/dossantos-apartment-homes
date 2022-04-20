@@ -35,10 +35,6 @@ const User = db.define('user', {
   },
   phoneNumber: {
       type: Sequelize.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true
-    }
   }
 })
 
