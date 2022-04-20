@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '../public')))
 
 app.use('/api', require('./api/'))
 
-app.use('/me', require('./me'))
+app.use('/auth', require('./auth'))
 
 // 400 Error Handler: Send index.html for any other requests
 app.get('*', (req, res) => {
@@ -19,7 +19,7 @@ app.get('*', (req, res) => {
 })
 
 // 500 Error handler
-app.use((req, res, next, err) => {
+app.use((err, req, res, next) => {
   res.status(err.status || 500).send(err.message || 'Internal server error')
 })
 
