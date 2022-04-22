@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './navbar'
+import Counter from './counter'
 
 function home() {
     return (
@@ -13,6 +14,7 @@ function home() {
                     <h6>Join the biggest family in Washington State!</h6>
                 </div>
             </div>
+            <Counter />
         </div>
     );
 }
