@@ -65,10 +65,14 @@ router.post('/refresh', async (req, res, next) => {
 // /auth/logout
 router.delete('/logout', async (req, res, next) => {
     const { refreshToken } = req.body
-    if (refreshToken == null) res.sendStatus(400)
+    if (refreshToken == null) return res.sendStatus(400)
     const userToken = await RefreshToken.findOne({where: {refreshToken}})
-    await userToken.destroy()
-    return res.status(200).send("User is successfully logged out")
+    if (userToken) {
+        await userToken.destroy()
+        return res.status(200).send("User is successfully logged out")
+    } else {
+        return res.status(400).send('user has already been logged out!')
+    }
 })
 
 module.exports = router;
