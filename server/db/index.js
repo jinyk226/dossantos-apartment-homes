@@ -2,8 +2,9 @@ const db = require('./database')
 const User = require('./users')
 const Renter = require('./renters')
 const Admin = require('./admins')
-const Apartments = require('./apartments')
+const Apartment = require('./apartments')
 const MaintTicket = require('./maintenanceTickets')
+const RefreshToken = require('./refreshTokens')
 
 //this is where we will set our associations
 User.hasOne(Renter)
@@ -20,6 +21,7 @@ module.exports = {
     User,
     Renter,
     Admin,
-    Apartments,
-    MaintTicket
+    Apartment,
+    MaintTicket,
+    RefreshToken
 }

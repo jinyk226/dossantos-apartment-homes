@@ -9,6 +9,7 @@ function navbar({pos, bgColor}) {
                 <Link className='navbar-right-contents' to='/home'>Home</Link>
                 <Link className='navbar-right-contents' to='/about-us'>About Us</Link>
                 <Link className='navbar-right-contents' to='/contact-us'>Contact Us</Link>
+                <Link className='navbar-right-contents' to='/auth'>Login</Link>
             </div>
         </div>
     );

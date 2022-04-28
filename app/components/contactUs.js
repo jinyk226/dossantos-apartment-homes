@@ -1,10 +1,15 @@
 import React from 'react';
+import NavBar from './navbar'
 
 function contactUs() {
-    return (
-        <div>
-            This is the contactUs component
-        </div>
+  return (
+    <div>
+      <NavBar pos='static' bgColor='#293241' />
+
+      <div>
+        This is the contactUs component
+      </div>
+    </div>
     );
 }
 
