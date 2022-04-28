@@ -1,10 +1,17 @@
 * {
     box-sizing: border-box;
     margin: 0px;
-    font-family: museo-sans, sans-serif;
+    font-family: museo-sans, sans-serif; 
     font-size: 16px;
     font-weight: 500;
     font-style: normal;
+}
+
+form {
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: column;
+    width: 100%;
 }
 
 a {
@@ -77,17 +84,17 @@ h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 150px;
-    min-height: 400px;
-    min-width: 800px;
-    width: 50vw;
+    padding: 50px;
+    height: 500px;
+    width: 400px;
     background-color: #ffffff;
     border-style: solid;
-    box-shadow: 3px 3px 6px #293241;
+    box-shadow: 0px 3px 5px #88888850;
     border-radius: 5px;
     border-width: 1px;
-    border-color: #293241;
+    border-color: #888888;
 }
 
 .center-flex {
