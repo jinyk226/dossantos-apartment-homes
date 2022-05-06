@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import NavBar from "./navbar";
+import NavBar from "../navbar/navbar";
+
+import './auth.css'
 
 function auth() {
   const [info, setInfo] = useState({
@@ -23,22 +25,6 @@ function auth() {
     borderRadius: '3px',
     borderWidth: '1px',
     padding: '5px 10px',
-    // transition: 'ease-in 0.3s',
-    // "&:hover": {
-    //   borderStyle: 'solid',
-    //   borderColor: '#888888',
-    // }
-  }
-
-
-  const submitStyle = {
-    background: '#EE6C4D',
-    borderStyle: 'none',
-    boxShadow: '2px 2px 3px #888888',
-    borderRadius: '3px',
-    color: 'white',
-    fontWeight: 'bold',
-    padding: '5px',
   }
 
   return (
@@ -72,8 +58,8 @@ function auth() {
           <br />
           <input 
             type="submit" 
-            value="Submit" 
-            style={submitStyle}
+            value="Submit"
+            id="submit"
           />
         </form>
       </div>
