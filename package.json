@@ -8,6 +8,7 @@
     "start-auth-server": "nodemon authServer.js -e js",
     "build": "webpack",
     "build-watch": "webpack -w",
+    "seed": "node seed.js",
     "start": "npm run build-watch & npm run start-server"
   },
   "repository": {
