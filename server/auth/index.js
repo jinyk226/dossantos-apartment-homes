@@ -35,10 +35,10 @@ router.post('/login', async (req, res, next) => {
                 await RefreshToken.create({refreshToken})
                 return res.send({accessToken, refreshToken})
             } else {
-                return res.status(401).send("Incorrect password, please try again")
+                return res.status(401).send({err: "Incorrect password, please try again"})
             }
         } else {
-            return res.status(400).send("Unable to find this user. Click 'sign up' to create an account!")
+            return res.status(400).send({err: "Unable to find this user. Click 'sign up' to create an account!"})
         }
     } catch (err) {
         console.log(err)

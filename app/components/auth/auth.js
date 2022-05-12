@@ -1,45 +1,45 @@
-import React, { useState } from "react";
-import NavBar from "./navbar";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux'
+import {login} from '../../store/auth'
+import NavBar from "../navbar/navbar";
+
+import './auth.css'
 
 function auth() {
+
+  const auth = useSelector((state) => state.auth.value)
+  const dispatch = useDispatch()
+
   const [info, setInfo] = useState({
     email: "",
     password: "",
   });
+
+  const [errStyle, setErrStyle] = useState({
+    display: 'none'
+  })
+
+  useEffect(() => {
+    console.log('useEffect entered')
+  }, [auth])
+
   const handleChange = (e) => {
     let field = e.target.name;
     let input = e.target.value;
     setInfo({ ...info, [field]: input });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(info);
-    //send to db
+    dispatch(login())
+    console.log('auth:', auth)
+    if (auth && auth.err) {
+      dispatch(handleErr())
+    }
   };
 
-  const inputStyle = {
-    borderColor: '#29324125',
-    borderRadius: '3px',
-    borderWidth: '1px',
-    padding: '5px 10px',
-    // transition: 'ease-in 0.3s',
-    // "&:hover": {
-    //   borderStyle: 'solid',
-    //   borderColor: '#888888',
-    // }
-  }
 
-
-  const submitStyle = {
-    background: '#EE6C4D',
-    borderStyle: 'none',
-    boxShadow: '2px 2px 3px #888888',
-    borderRadius: '3px',
-    color: 'white',
-    fontWeight: 'bold',
-    padding: '5px',
-  }
 
   return (
     <div
@@ -50,6 +50,7 @@ function auth() {
 
       <div id="auth-div">
         <img style={{width: '200px'}} src="https://i.imgur.com/5mnfdiE.png" />
+        <div id="err-div" style={errStyle}>Error: {auth && auth.err}</div>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
@@ -58,7 +59,6 @@ function auth() {
             onChange={handleChange}
             autoComplete="none"
             placeholder="Email"
-            style={inputStyle}
           />
           <br />
           <input
@@ -67,13 +67,12 @@ function auth() {
             name="password"
             onChange={handleChange}
             placeholder="Password"
-            style={inputStyle}
           />
           <br />
           <input 
             type="submit" 
-            value="Submit" 
-            style={submitStyle}
+            value="Submit"
+            id="submit"
           />
         </form>
       </div>

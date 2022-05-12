@@ -25,7 +25,7 @@ app.use((err, req, res, next) => {
 
 
 
-authApp.use('/auth', require('./auth'))
+app.use('/auth', require('./auth'))
 
 // 400 Error Handler: Send index.html for any other requests
 authApp.get('*', (req, res) => {

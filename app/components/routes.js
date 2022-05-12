@@ -1,9 +1,9 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom'
-import Home from './home'
-import AboutUs from './aboutUs'
-import ContactUs from './contactUs'
-import Auth from './auth'
+import Home from './home/home'
+import AboutUs from './aboutUs/aboutUs'
+import ContactUs from './contactUs/contactUs'
+import Auth from './auth/auth'
 
 const app = () => {
     return (
